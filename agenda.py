@@ -8,6 +8,18 @@ def add_contato(agenda):
     print("\nContato adicionado com sucesso. 😉")
     return
 
+def ver_agenda(agenda):
+    if agenda:
+            print("\nSeus contatos:")
+            for idx, contato in enumerate(agenda, 1):
+                print(f"{idx}. Nome: {contato['Nome']}, Telefone: {contato['Telefone']}, Email: {contato['Email']}")
+    else:
+        print("\nA agenda está vazia.")
+    return
+
+# Lista inicial da agenda   
+agenda = []
+
 while True:
     print ("\nMenu do Gerenciador de Agenda 📑:\n")    
     print ("1. Adicione um contado")
