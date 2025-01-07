@@ -1,3 +1,13 @@
+def add_contato(agenda):
+    nome = input("Digite o nome do contato: ")
+    telefone = input ("Digite o numero do telefone do contato: ")
+    email = input ("Digite o email do contato: ")
+
+    contato = {"Nome": nome,"Telefone": telefone, "Email": email, "Favorito": False}
+    agenda.append(contato)
+    print("\nContato adicionado com sucesso. 😉")
+    return
+
 while True:
     print ("\nMenu do Gerenciador de Agenda 📑:\n")    
     print ("1. Adicione um contado")
