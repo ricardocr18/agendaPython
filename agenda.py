@@ -17,6 +17,33 @@ def ver_agenda(agenda):
         print("\nA agenda está vazia.")
     return
 
+def editar_agenda(agenda):
+    if agenda:
+        print("\nSegue contatos para serem editados")
+        ver_agenda(agenda)
+        try:
+            idx = int(input ("Digite o número do contato que deseja alterar: ")) -1
+            if 0 <= idx < len(agenda):
+                contato = agenda[idx]
+                print (f"\nEditando o contato: {contato['Nome']}")
+
+                novo_nome = input(f"Digite o novo nome (ou pressione Enter para manter '{contato['Nome']}'): ")
+                novo_telefone = input(f"Digite o novo telefone (ou pressione Enter para manter '{contato['Telefone']}'): ")
+                novo_email = input(f"Digite o novo email (ou pressione Enter para manter '{contato['Email']}'): ")
+
+                contato['Nome'] = novo_nome if novo_nome else contato['Nome']
+                contato['Telefone'] = novo_telefone if novo_telefone else contato['Telefone']
+                contato['Email'] = novo_email if novo_email else contato['Email']
+
+                print ("\nContato atualizado com sucesso")
+            else:
+                print ("\nNúmero inválido. Tente novamente")
+        except ValueError:
+            print ("\nPor favor, inisra um número válido")
+    else:
+        print("\nA agenda está vazia, 😞")
+    return
+
 # Lista inicial da agenda   
 agenda = []
 
