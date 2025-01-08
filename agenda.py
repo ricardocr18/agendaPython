@@ -44,6 +44,16 @@ def editar_agenda(agenda):
         print("\nA agenda está vazia, 😞")
     return
 
+def ver_favoritos(agenda):
+    favoritos = [contato for contato in agenda if contato["Favorito"]]
+    if favoritos:
+        print ("\nSeus contatos favoritos:")
+        for idx, contato in enumerate(favoritos, 1):
+            print(f"{idx}.Nome: {contato['Nome']}, Telefon: {contato['Telefone']}, Email: {contato['Email']} ")       
+    else:
+        print("\nA Agenda está vazia, sem informações. 😞")    
+    return
+
 # Lista inicial da agenda   
 agenda = []
 
