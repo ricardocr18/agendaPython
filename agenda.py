@@ -71,6 +71,29 @@ def marcar_favorito(agenda):
         print("\nA agenda está vazia, 😞")
     return
 
+def desmarcar_favorito(agenda):
+    if agenda:
+        print("\nSeguem contatos Favoritos para desmarcar:")
+        favoritos = [contato for contato in agenda if contato["Favorito"]]
+        if favoritos:
+            for idx, contato in enumerate(favoritos, 1):
+                print(f"{idx}. Nome: {contato['Nome']}, Telefone: {contato['Telefone']}, Email: {contato['Email']}")
+        try:                
+            idx = int(input("Digite o número do contato que deseja desmarcar como favorito: ")) - 1
+            if 0 <= idx < len(favoritos):                
+                contato = favoritos[idx]
+                contato["Favorito"] = False
+                print(f"\nContato '{contato['Nome']}' desmarcado como favorito!")
+            else:
+                print("\nNúmero inválido. Tente novamente.")
+        except ValueError:
+            print("\nPor favor, insira um número válido.")
+        else:
+            print("\nNenhum contato está marcado como favorito.")
+    else:
+        print("\nA agenda está vazia, 😞") 
+    return
+
 # Lista inicial da agenda   
 agenda = []
 
