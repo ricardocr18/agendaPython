@@ -54,6 +54,23 @@ def ver_favoritos(agenda):
         print("\nA Agenda está vazia, sem informações. 😞")    
     return
 
+def marcar_favorito(agenda):
+    if agenda:
+        print ("n\Segue contatos para serem marcados como favoritos:")
+        ver_agenda(agenda)
+        try:
+            idx = int(input("Digite o número do contato que deseja marcar como favorito: ")) - 1
+            if 0 <= idx < len(agenda):
+                agenda[idx]["Favorito"] = True
+                print(f"\nContato '{agenda[idx]['Nome']}' marcado como favorito!")
+            else:
+                print("\nNúmero inválido. Tente novamente.")
+        except ValueError:
+            print("\nPor favor, insira um número válido.") 
+    else:
+        print("\nA agenda está vazia, 😞")
+    return
+
 # Lista inicial da agenda   
 agenda = []
 
