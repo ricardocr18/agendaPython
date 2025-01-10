@@ -4,7 +4,7 @@ Desafio referente à Formação Python do curso Rocketseat: Desenvolver uma agen
 
 ## Sobre o Desafio
 
-O resultado da aplicação deve grenciado e apresentado no terminal do Visual Studio Code.
+O resultado da aplicação deve ser gerenciado e apresentado pelo terminal do Visual Studio Code.
 
 ## Regras da Aplicação
 
