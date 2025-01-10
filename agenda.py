@@ -51,7 +51,7 @@ def ver_favoritos(agenda):
         for idx, contato in enumerate(favoritos, 1):
             print(f"{idx}.Nome: {contato['Nome']}, Telefon: {contato['Telefone']}, Email: {contato['Email']} ")       
     else:
-        print("\nA Agenda está vazia, sem informações. 😞")    
+        print("\nA Agenda de Favoritos está vazia, sem informações. 😞")    
     return
 
 def marcar_favorito(agenda):
@@ -90,6 +90,23 @@ def desmarcar_favorito(agenda):
             print("\nPor favor, insira um número válido.")
         else:
             print("\nNenhum contato está marcado como favorito.")
+    else:
+        print("\nA agenda está vazia, 😞") 
+    return
+
+def delete_contato(agenda):
+    if (agenda):
+        print("\nSeguem contatos, escolha um para deletar:")
+        ver_agenda(agenda)
+        try:
+            idx = int(input("Digite o número do contato que deseja deletar da agenda: ")) - 1
+            if 0 <= idx < len(agenda):
+                contato = agenda.pop(idx) #remove o contato pelo ídice
+                print(f"\nContato '{contato['Nome']}' removido com sucesso.")
+            else:
+                print("\nNumero inválido. Tente novamente")
+        except ValueError:
+            print("\nPor favor, insira um número válido.")
     else:
         print("\nA agenda está vazia, 😞") 
     return
